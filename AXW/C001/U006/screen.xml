@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AXW-C001-U006 — Even or Odd Number Checker: screen layout. Behaviour is in design.md. -->
+<screen id="even-odd-calculator" title="Even or Odd Number Checker" layout="single-column" maxWidth="480px" align="center">
+  <heading level="1">Even or Odd Number Checker</heading>
+  <form id="checker-form">
+    <textField id="number" label="Number" type="text" focusOnLoad="true" requirements="R1 R3 R4 R5 R6"/>
+    <buttonGroup direction="row">
+      <button id="check" label="Check" variant="primary" action="check" requirements="R1 R4 R5 R6"/>
+      <button id="clear" label="Clear" variant="secondary" action="clear" requirements="R2"/>
+    </buttonGroup>
+  </form>
+  <resultMessage id="result" for="number" visibleWhen="outcome-set">
+    <outcome name="even" style="normal">Even Number</outcome>
+    <outcome name="odd" style="normal">Odd Number</outcome>
+    <outcome name="input_empty" style="error" reasonCode="input_empty"/>
+    <outcome name="input_not_integer" style="error" reasonCode="input_not_integer"/>
+    <outcome name="input_too_long" style="error" reasonCode="input_too_long"/>
+  </resultMessage>
+</screen>
